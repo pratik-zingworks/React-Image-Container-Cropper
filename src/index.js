@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import PdfGenerator from './component/pdfGenerator';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    {/* <PdfGenerator /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

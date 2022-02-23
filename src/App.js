@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import CkEditorContainer from "./component/CkEditorContainer";
+import PreviewContainer from "./component/PreviewContainer";
 
-function App() {
+import "./App.css"
+import { Grid } from "@mui/material";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className = "app-container" >
+      <Grid container spacing = {2} >
+        <Grid item xs = {12} >
 
+        </Grid>
+        <Grid item xs = {12} >
+          <Grid container >
+            <Grid item md = {6} xs = {12} >
+              <div className = "container-a" >
+                <div className = "sub-container-a" >
+                  <img />
+                </div>
+                {/* <PreviewContainer /> */}
+              </div>
+            </Grid>
+            <Grid item md = {6} xs = {12} >
+              <div className = "container-b" >
+                <CkEditorContainer />
+              </div>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </div> 
+   );
+}
+ 
 export default App;
