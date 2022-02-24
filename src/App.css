@@ -4,24 +4,94 @@
   
 }
 .container-a, .container-b{
-  width: 100%;
+  /* width: 100%; */
   /* height: 100%; */
   /* background-color: red; */
-  padding: 10px;
+  /* padding: 10px; */
+  
+
 }
-.app-container .container-a .sub-container-a{
+
+.app-container .container-a .sub-container-a, .container-b .sub-container-a{
   margin: auto;
-  width: 100%;
-  background: #fff;
-  height: 90vh;
+  width: 672px;
+  /* background: url("https://images.unsplash.com/photo-1504297050568-910d24c426d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"); */
+  height: 792px;
+ 
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  position: relative;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 
 }
-.app-container .container-a .sub-container-a img{
+/* .app-container .container-a .sub-container-a:hover{
+  overflow: scroll;
+} */
+.app-container .container-a .sub-container-a img, .container-b .sub-container-a img{
+  width: inherit;
+  height: inherit; 
+  object-fit: cover;
+  /* margin: auto; */
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+@media print {
+  @page {
+    size: 672px 792px;
+    
+  }
+}
+/* #mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+} */
+
+.sub-container-a .img.header, .sub-container-a .img.header {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+.slidecontainer {
   width: 100%;
+  text-align: center;
+}
+.slidecontainer input{
+  width: 45%;
+  height: 60px;
+  cursor: pointer;
+}
+.slider {
+  /* -webkit-appearance: none; */
+  width: 100%;
+  height: 25px;
+  /* background: #d3d3d3; */
+  /* outline: none; */
+  /* opacity: 0.7; */
+  /* -webkit-transition: .2s; */
+  /* transition: opacity .2s; */
 }
 
+
+@media print {
+
+  .sub-container-a{
+    width: 100%;
+  }
+}
+
+/* @media print {
+} */
 /* .App-container{
   width: 100%;
   display: flex;

@@ -8,7 +8,21 @@ import PdfGenerator from './component/pdfGenerator';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    {/* <PdfGenerator /> */}
+    <>
+    {/* <PdfGenerator />
+    <PdfGenerator />
+    <PdfGenerator /> */}
+    {/* <PdfGenerator />
+    <PdfGenerator />
+    <PdfGenerator />
+    <PdfGenerator />
+    <PdfGenerator />
+    <PdfGenerator />
+    <PdfGenerator /> */}
+    
+
+    </>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

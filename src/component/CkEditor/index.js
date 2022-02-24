@@ -1,8 +1,15 @@
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ReactCrop from 'react-image-crop'
+import 'react-image-crop/dist/ReactCrop.css'
 
 import { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
+
+// function CropDemo({ src }) {
+//     console.log(crop)
+//     return <ReactCrop src={src} crop={crop} onChange={newCrop => setCrop(newCrop)} />
+// }
 
 const CkEditor = () => {
 
@@ -10,6 +17,9 @@ const CkEditor = () => {
     const [consultName, setConsultName] = useState("ConsultantName")
 
     const [imgSrc, setImgSrc] = useState("")
+    // const [crop, setCrop] = useState({ aspect: 16 / 9 })
+
+    // const [croppedImgUrl, setCroppedImgUrl] = useState(null)
 
     useEffect(() => {
         // document.querySelector(".my-edit-field").innerHTML = clientName
@@ -19,9 +29,38 @@ const CkEditor = () => {
 
 
     const UploadHandler = () => {
-        console.log(imgSrc)
+        // console.log(imgSrc)
         var x = document.querySelector(".sub-container-a img")
         x.src = imgSrc
+    }
+
+    //image selection
+    const onSelectFile = (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+          const reader = new FileReader();
+          reader.addEventListener('load', () =>
+            setImgSrc(reader.result)
+          );
+          reader.readAsDataURL(e.target.files[0]);
+        }
+    };
+   
+    //Increase Size of image:
+    const incrImgSize = () => {
+        
+            var x = document.querySelector(".sub-container-a img")
+            x.style.width = `${x.width + 20}px`
+            x.style.height = `${x.height + 20}px`
+
+            console.log(x.width)
+        
+    }
+    const decrImgSize = () => {
+        var x = document.querySelector(".sub-container-a img")
+            x.style.width = `${x.width - 20}px`
+            x.style.height = `${x.height - 20}px`
+
+            console.log(x.width)
     }
 
     return ( 
@@ -83,13 +122,35 @@ const CkEditor = () => {
 
                 </div>
                 &nbsp;
+                {/* <CropDemo  src = {imgSrc} /> */}
                 <form onSubmit={ (e) => {
                     e.preventDefault()
                     UploadHandler()} } >
-                    <input type = "file" onChange={(e) => setImgSrc(e.target.files[0]) } />
-                    <Button variant='contained' type='submit' >Upload</Button> 
-                </form>
-                
+                    <input type="file" accept="image/*" onChange={(e) => onSelectFile(e)} />
+                    <Button variant='contained' type='submit' >Upload</Button>
+                    
+                </form>    
+                <Button
+                variant='contained'
+                onClick = {() => incrImgSize()}
+                >+</Button>
+                &nbsp;
+                <Button
+                variant='contained'
+                onClick = {() => decrImgSize()}
+                >-</Button> 
+        <div>
+        </div>
+        
+
+
+
+
+
+
+
+
+
         </div>
      );
 }
